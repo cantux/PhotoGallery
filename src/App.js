@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import PhotoGallery from "./components/PhotoGallery";
+
+const imgCaptionsArray = require('./images.json');
 
 class App extends Component {
   render() {
@@ -11,7 +14,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          <PhotoGallery imgCapArray={imgCaptionsArray}/>
         </p>
       </div>
     );

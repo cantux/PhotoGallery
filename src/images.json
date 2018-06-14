@@ -1,0 +1,39 @@
+[
+  {
+    "imgUrl":
+      "https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "caption":
+      "image 0"
+  },
+  {
+    "imgUrl":
+      "https://images.pexels.com/photos/56005/fiji-beach-sand-palm-trees-56005.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "caption":
+      "image 1"
+  },
+  {
+    "imgUrl":
+      "https://images.pexels.com/photos/878/sea-sky-beach-holiday.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "caption":
+      "image 2"
+  },
+  {
+    "imgUrl":
+      "https://images.pexels.com/photos/3438/beach-holiday-vacation-caribbean.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "caption":
+      "image 3"
+  },
+  {
+    "imgUrl":
+      "https://images.pexels.com/photos/6934/beach-vacation-water-summer.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "caption":
+      "image 4"
+  },
+  {
+    "imgUrl":
+      "https://images.pexels.com/photos/157398/pexels-photo-157398.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "caption":
+      "image 5"
+  }
+]
+
