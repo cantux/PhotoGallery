@@ -34,15 +34,17 @@ export default class PhotoGallery extends Component {
     const imagesToRender = this.props.imgCapArray[this.state.currentIndex];
     return (
       <div onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
-        {
-          !this.state.showOverlay
-            ? <Image imgUrl={imagesToRender.imgUrl}/>
-            : <CaptionOverlay
-                captionText={imagesToRender.caption}
-                onPrevButtonClick={this.createNavigateButtonHandler(-1)}
-                onNextButtonClick={this.createNavigateButtonHandler(1)}
-              />
-        }
+          <Image
+            imgUrl={imagesToRender.imgUrl}
+            hover={this.state.showOverlay}
+          />
+          <CaptionOverlay
+            captionText={imagesToRender.caption}
+            onPrevButtonClick={this.createNavigateButtonHandler(-1)}
+            onNextButtonClick={this.createNavigateButtonHandler(1)}
+            hover={this.state.showOverlay}
+          />
+
       </div>
     );
   }
