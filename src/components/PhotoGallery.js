@@ -8,10 +8,9 @@ export default class PhotoGallery extends Component {
   state = {
     currentIndex: 0,
     showOverlay: false,
-    left: 0,
-    originalOffset: 0,
     touchStartX: 0,
     beingTouched: false,
+    navigated: false
   };
 
   // pay the price and create the handler on every render to save code dupe
@@ -25,7 +24,6 @@ export default class PhotoGallery extends Component {
 
   handleStart(clientX) {
     this.setState({
-      originalOffset: this.state.left,
       touchStartX: clientX,
       beingTouched: true
     });
@@ -33,19 +31,17 @@ export default class PhotoGallery extends Component {
 
   handleMove(clientX) {
     if (this.state.beingTouched) {
-      let deltaX = clientX - this.state.touchStartX + this.state.originalOffset;
-      console.log('deltax: ', deltaX)
-      if (deltaX < -350) {
-        this.createNavigateButtonHandler(-1)();
-      } else if (deltaX > 350) {
-        this.createNavigateButtonHandler(1)();
+      let deltaX = clientX - this.state.touchStartX;
+      if(!this.state.navigated)
+      {
+        if (deltaX < -350) {
+          this.createNavigateButtonHandler(-1)();
+          this.setState((prevState) => ({prevState, navigated: true}))
+        } else if (deltaX > 350) {
+          this.createNavigateButtonHandler(1)();
+          this.setState((prevState) => ({prevState, navigated: true}))
+        }
       }
-      else {
-        deltaX = 0;
-      }
-      this.setState({
-        left: deltaX
-      });
     }
   }
 
@@ -53,7 +49,8 @@ export default class PhotoGallery extends Component {
     this.setState({
       touchStartX: 0,
       beingTouched: false,
-      left: 0
+      left: 0,
+      navigated: false
     });
   }
 
@@ -72,11 +69,11 @@ export default class PhotoGallery extends Component {
 
   onMouseEnter = () => {
     this.setState((prevState, props) => (Object.assign(prevState, {showOverlay: true})))
-  }
+  };
 
   onMouseLeave = () => {
     this.setState((prevState, props) => (Object.assign(prevState, {showOverlay: false})))
-  }
+  };
 
   render() {
     const imagesToRender = this.props.imgCapArray[this.state.currentIndex];
