@@ -3,10 +3,11 @@ import React from 'react';
 const style = {
   opacity: 1,
   display: "block",
-  width: "100%",
-  height: "auto",
+  "max-width": "100%",
+  "max-height": "100%",
   transition: ".5s ease",
-  "backface-visibility": "hidden"
+  "backface-visibility": "hidden",
+  "object-fit": "contain"
 };
 
 export const Image = (props) => (
